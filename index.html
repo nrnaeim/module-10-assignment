@@ -16,21 +16,53 @@
     <div class="heading container">
       <h3 class="text-center">Module 10 Assignment</h3>
     </div>
-    <div class="container border border-1 rounded-2 py-2" id="question1">
-      <h5>
-        Q.1. Write a function named countVowels that takes a string and returns
-        the number of vowels in it.
-      </h5>
-      <div class="inputWrapper">
-        <div class="div">
-          <label for="answer">Input:</label>
-          <input type="text" placeholder="Enter Yout String" />
-        </div>
-        <div class="div">
-          <label for="answer">Answer:</label> 
-          <input type="text" disabled />
+    <div class="questionContainer d-flex flex-column gap-3">
+      <!-- Question 1 Start  -->
+      <div id="question1" class="container border border-1 rounded-2 py-2">
+        <h5>
+          Q.1. Write a function named countVowels that takes a string and
+          returns the number of vowels in it.
+        </h5>
+        <div class="inputAnswerWrapper">
+          <div class="inputWrapper">
+            <label for="questionOneInput">Input:</label>
+            <input
+              id="questionOneInput"
+              type="text"
+              placeholder="Enter Yout String"
+            />
+          </div>
+          <div class="answerWrapper">
+            <label for="questionOneAnswer">Answer:</label>
+            <input id="questionOneAnswer" type="text" disabled />
+          </div>
         </div>
       </div>
+      <!-- Question 1 End  -->
+
+      <!-- Question 2 Start  -->
+      <div id="question2" class="container border border-1 rounded-2 py-2">
+        <h5>
+          Q.2. Write a function named sortNumbers that takes an array of numbers
+          and returns the array sorted in ascending order.
+        </h5>
+        <div class="inputAnswerWrapper">
+          <div class="inputWrapper">
+            <label for="questionTwoInput">Array:</label>
+            <input
+              id="questionTwoInput"
+              type="text"
+              placeholder="Plese separate elements by space"
+            />
+          </div>
+          <div class="answerWrapper">
+            <label for="questionTwoAnswer">Answer:</label>
+            <input id="questionTwoAnswer" type="text" disabled />
+          </div>
+        </div>
+      </div>
+      <!-- Question 2 End  -->
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
