@@ -1,16 +1,27 @@
 //Question 1 answer
-document
-  .querySelector("#questionOneInput")
-  .addEventListener("input", (event) => {
-    document.querySelector("#questionOneAnswer").value = countVowels(event);
+document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
+  inputField.addEventListener("input", (event) => {
+    const id = event.target.id;
+    const targetValue = event.target.value;
+    if (id === "questionOneInput") {
+      document.querySelector("#questionOneResult").value =
+        countVowels(targetValue);
+    } else if (id === "questionTwoInput") {
+      document.querySelector("#questionTwoAnswer").value =
+        sortNumbers(targetValue).join(" ");
+    } else if (id === "questionThreeInput") {
+      document.querySelector("#questionThreeResult").value =
+        reverseString(targetValue);
+    }
   });
-//vowel count return function
-function countVowels(event) {
-  const str = event.target.value;
+});
+
+//Question 1 Answer countVowels
+function countVowels(targetValue) {
   const vowelsArray = ["a", "e", "i", "o", "u"];
   let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i].toLowerCase();
+  for (let i = 0; i < targetValue.length; i++) {
+    let char = targetValue[i].toLowerCase();
     if (vowelsArray.includes(char)) {
       count++;
     }
@@ -18,13 +29,12 @@ function countVowels(event) {
   return count;
 }
 
-//Question 2 Answer
-function sortNumbers(input) {
-  const inputArray = input.split(" ");
+//Question 2 Answer sortNumbers
+function sortNumbers(targetValue) {
+  const inputArray = targetValue.split(" ");
   const numArray = [];
   for (let i = 0; i < inputArray.length; i++) {
     const parsedNum = parseInt(inputArray[i]);
-
     if (!Number.isNaN(parsedNum)) {
       numArray.push(inputArray[i]);
     }
@@ -32,10 +42,11 @@ function sortNumbers(input) {
   return numArray.sort((a, b) => a - b);
 }
 
-document
-  .querySelector("#questionTwoInput")
-  .addEventListener("input", (event) => {
-    const inputvalues = event.target.value;
-    document.querySelector("#questionTwoAnswer").value =
-      sortNumbers(inputvalues).join(" ");
-  });
+//Question 3 Answer reverseString
+function reverseString(targetValue) {
+  let reverseString = "";
+  for (let i = targetValue.length - 1; i >= 0; i--) {
+    reverseString += targetValue[i];
+  }
+  return reverseString;
+}

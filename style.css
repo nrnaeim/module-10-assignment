@@ -1,4 +1,4 @@
-.inputAnswerWrapper {
+.inputresultWrapper {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -6,7 +6,7 @@
     font-size: 20px;
   }
   .inputWrapper,
-  .answerWrapper {
+  .resultWrapper {
     width: 100%;
     input {
       height: 2rem;
