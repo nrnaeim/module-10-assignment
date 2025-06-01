@@ -20,10 +20,16 @@ function countVowels(event) {
 
 //Question 2 Answer
 function sortNumbers(input) {
-  return input
-    .split(" ")
-    .map(Number)
-    .sort((a, b) => a - b);
+  const inputArray = input.split(" ");
+  const numArray = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    const parsedNum = parseInt(inputArray[i]);
+
+    if (!Number.isNaN(parsedNum)) {
+      numArray.push(inputArray[i]);
+    }
+  }
+  return numArray.sort((a, b) => a - b);
 }
 
 document
