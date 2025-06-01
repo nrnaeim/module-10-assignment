@@ -1,0 +1,12 @@
+.inputWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  label {
+    font-size: 20px;
+  }
+  input {
+    height: 2rem;
+  }
+}
