@@ -4,8 +4,15 @@ document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
     const id = event.target.id;
     const targetValue = event.target.value;
     if (id === "questionOneInput") {
-      document.querySelector("#questionOneResult").value =
-        countVowels(targetValue);
+      const resultInput = document.querySelector("#questionOneResult");
+      if (targetValue !== "") {
+        const result = `Number of vowels in "${targetValue}" is: ${countVowels(
+          targetValue
+        )}`;
+        resultInput.value = result;
+      } else {
+        resultInput.value = "";
+      }
     } else if (id === "questionTwoInput") {
       document.querySelector("#questionTwoAnswer").value =
         sortNumbers(targetValue).join(" ");
