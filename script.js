@@ -70,5 +70,9 @@ function getLastElement(targetValue) {
       trimedArray.push(array[i]);
     }
   }
-  return trimedArray[trimedArray.length - 1];
+  if (trimedArray.length === 0) {
+    return "";
+  } else {
+    return trimedArray[trimedArray.length - 1];
+  }
 }
