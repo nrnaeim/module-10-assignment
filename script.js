@@ -22,6 +22,12 @@ document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
     } else if (id === "questionFourInput") {
       document.querySelector("#questionFourResult").value =
         getLastElement(targetValue);
+    } else if (id === "questionFiveInput1" || id === "questionFiveInput2") {
+      document.querySelector("#questionFiveResult").value =
+        mergeArrays().join(" ");
+    } else if (id === "questionSixInput") {
+      document.querySelector("#questionSixResult").value =
+        hasSpace(targetValue);
     }
   });
 });
@@ -75,4 +81,40 @@ function getLastElement(targetValue) {
   } else {
     return trimedArray[trimedArray.length - 1];
   }
+}
+
+//Question 5 Answer  mergeArrays
+function mergeArrays() {
+  const input1 = document.querySelector("#questionFiveInput1").value;
+  const input2 = document.querySelector("#questionFiveInput2").value;
+
+  const array1 = formArray(input1);
+  const array2 = formArray(input2);
+
+  return array1.concat(array2);
+
+  //destructur
+  // return [...array1, ...array2];
+
+  function formArray(string) {
+    const tempArray = [];
+    string.split(" ").forEach((el) => {
+      if (el !== "") {
+        tempArray.push(el);
+      }
+    });
+    return tempArray;
+  }
+}
+
+//Question 6 Answer  hasSpace
+function hasSpace(targetValue) {
+  let foundSpace = false;
+  for (let i = 0; i < targetValue.length; i++) {
+    if (targetValue[i] === " ") {
+      foundSpace = true;
+      break;
+    }
+  }
+  return foundSpace;
 }
