@@ -19,6 +19,9 @@ document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
     } else if (id === "questionThreeInput") {
       document.querySelector("#questionThreeResult").value =
         reverseString(targetValue);
+    } else if (id === "questionFourInput") {
+      document.querySelector("#questionFourResult").value =
+        getLastElement(targetValue);
     }
   });
 });
@@ -56,4 +59,16 @@ function reverseString(targetValue) {
     reverseString += targetValue[i];
   }
   return reverseString;
+}
+
+//Question 4 Answer getLastElement
+function getLastElement(targetValue) {
+  const array = targetValue.split(" ");
+  const trimedArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== "") {
+      trimedArray.push(array[i]);
+    }
+  }
+  return trimedArray[trimedArray.length - 1];
 }
