@@ -1,5 +1,5 @@
 //Question 1 answer
-document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
+document.querySelectorAll(".inputWrapper input").forEach((inputField) => { 
   inputField.addEventListener("input", (event) => {
     const id = event.target.id;
     const targetValue = event.target.value.trim();
