@@ -28,6 +28,9 @@ document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
     } else if (id === "questionSixInput") {
       document.querySelector("#questionSixResult").value =
         hasSpace(targetValue);
+    } else if (id === "questionSevenInput") {
+      document.querySelector("#questionSevenResult").value =
+        isEmptyString(targetValue);
     }
   });
 });
@@ -109,12 +112,18 @@ function mergeArrays() {
 
 //Question 6 Answer  hasSpace
 function hasSpace(targetValue) {
-  let foundSpace = false;
   for (let i = 0; i < targetValue.length; i++) {
     if (targetValue[i] === " ") {
-      foundSpace = true;
-      break;
+      return true;
     }
   }
-  return foundSpace;
+  return false;
+}
+
+//Question 7 Answer  hasSpace
+function isEmptyString(targetValue) {
+  if (targetValue.length === 0) {
+    return true;
+  }
+  return false;
 }
