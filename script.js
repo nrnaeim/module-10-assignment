@@ -2,7 +2,7 @@
 document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
   inputField.addEventListener("input", (event) => {
     const id = event.target.id;
-    const targetValue = event.target.value;
+    const targetValue = event.target.value.trim();
     if (id === "questionOneInput") {
       const resultInput = document.querySelector("#questionOneResult");
       if (targetValue !== "") {
