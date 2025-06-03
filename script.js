@@ -31,6 +31,9 @@ document.querySelectorAll(".inputWrapper input").forEach((inputField) => {
     } else if (id === "questionSevenInput") {
       document.querySelector("#questionSevenResult").value =
         isEmptyString(targetValue);
+    } else if (id === "questionEightInput") {
+      document.querySelector("#questionEightResult").value =
+        removeNegativeNumbers(targetValue);
     }
   });
 });
@@ -120,10 +123,22 @@ function hasSpace(targetValue) {
   return false;
 }
 
-//Question 7 Answer  hasSpace
+//Question 7 Answer  isEmptyString
 function isEmptyString(targetValue) {
   if (targetValue.length === 0) {
     return true;
   }
   return false;
+}
+
+//Question 8 Answer  removeNegativeNumbers
+function removeNegativeNumbers(targetValue) {
+  const valueArray = targetValue.trim().split(" ").map(Number);
+  const trimmedArray = [];
+  for (let i = 0; i < valueArray.length; i++) {
+    if (valueArray[i] != "NaN" && valueArray[i] > -1) {
+      trimmedArray.push(valueArray[i]);
+    }
+  }
+  return trimmedArray.join(" ");
 }
